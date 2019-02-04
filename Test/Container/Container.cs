@@ -15,7 +15,7 @@ namespace Test.Container
         {
             var container = new ContainerBuilder();
 
-            container.RegisterType<IApplicationStart>().As<ApplicationStart>();
+            container.RegisterType<ApplicationStart>().As<IApplicationStart>();
 
             return container.Build();
         }
