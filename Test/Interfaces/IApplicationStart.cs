@@ -8,5 +8,6 @@ namespace Test.Interfaces
 {
     public interface IApplicationStart
     {
+        void Run();
     }
 }

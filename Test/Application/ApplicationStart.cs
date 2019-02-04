@@ -8,5 +8,9 @@ namespace Test.Application
 {
     public class ApplicationStart
     {
+        public void Run()
+        {
+
+        }
     }
 }

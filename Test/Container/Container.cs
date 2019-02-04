@@ -17,7 +17,6 @@ namespace Test.Container
 
             container.RegisterType<IApplicationStart>().As<ApplicationStart>();
 
-
             return container.Build();
         }
     }
