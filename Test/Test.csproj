@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\ApplicationStart.cs" />
+    <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Messager\IMessager.cs" />
+    <Compile Include="Messager\Messager.cs" />
     <Compile Include="Container\Container.cs" />
     <Compile Include="Interfaces\IApplicationStart.cs" />
     <Compile Include="Program.cs" />
