@@ -22,18 +22,33 @@ namespace Test.Container
 
             //container.RegisterType<Commands.Command>().As<ICommand>().WithParameter(new TypedParameter(typeof(Action), "sectionName"));
 
+
+            //Tests with parameter
             container.RegisterType<Messager>().As<IMessager>().WithParameter(new TypedParameter(typeof(string), "Schreib mir den Text"));
 
             container.RegisterType<Command>().As<ICommand>().WithParameter(new TypedParameter(typeof(Action), new Action(() => Console.WriteLine("ActionText"))));
 
 
-            //
+            
             container.Register<Func<string, ICommand>>(delegate (IComponentContext context)
              {
                  IComponentContext cc = context.Resolve<IComponentContext>();
 
                  return cc.ResolveNamed<ICommand>;
              });
+
+
+            container.RegisterType<Command>().As<ICommand>();
+
+            container.Register<Func<Action, ICommand >> (c =>
+            {
+                var componentContext = c.Resolve<IComponentContext>();
+                return (action) =>
+                {
+                    var dataService = componentContext.ResolveK<ICommand>(action);
+                    return dataService;
+                };
+            });
 
 
 
