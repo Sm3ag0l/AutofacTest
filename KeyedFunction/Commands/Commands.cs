@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Test.Commands
+namespace KeyedFunction.Commands
 {
     public class Command : ICommand
     {

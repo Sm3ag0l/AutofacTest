@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B2AEAFC-DF51-4E1C-9749-628C153F25EF}</ProjectGuid>
+    <ProjectGuid>{13D234D1-87D8-47B3-A418-777BA7D65E38}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Test</RootNamespace>
-    <AssemblyName>Test</AssemblyName>
+    <RootNamespace>KeyedFunction</RootNamespace>
+    <AssemblyName>KeyedFunction</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,11 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\ApplicationStart.cs" />
-    <Compile Include="Commands\Commands.cs" />
-    <Compile Include="Messager\IMessager.cs" />
-    <Compile Include="Messager\Messager.cs" />
-    <Compile Include="Container\Container.cs" />
     <Compile Include="Application\IApplicationStart.cs" />
+    <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Container\Container.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +57,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

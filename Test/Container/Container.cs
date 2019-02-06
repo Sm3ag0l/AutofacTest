@@ -17,18 +17,25 @@ namespace Test.Container
         {
             var container = new ContainerBuilder();
 
+            // neccessary for start of application
             container.RegisterType<ApplicationStart>().As<IApplicationStart>();
 
-            //container.RegisterType<Commands.Commands>().As<ICommand>().WithParameter(new TypedParameter(typeof(Action), "sectionName"));
+            //container.RegisterType<Commands.Command>().As<ICommand>().WithParameter(new TypedParameter(typeof(Action), "sectionName"));
 
             container.RegisterType<Messager>().As<IMessager>().WithParameter(new TypedParameter(typeof(string), "Schreib mir den Text"));
 
+            container.RegisterType<Command>().As<ICommand>().WithParameter(new TypedParameter(typeof(Action), new Action(() => Console.WriteLine("ActionText"))));
+
+
+            //
             container.Register<Func<string, ICommand>>(delegate (IComponentContext context)
              {
                  IComponentContext cc = context.Resolve<IComponentContext>();
 
                  return cc.ResolveNamed<ICommand>;
              });
+
+
 
             return container.Build();
         }
