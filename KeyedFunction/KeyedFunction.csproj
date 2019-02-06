@@ -48,8 +48,13 @@
   <ItemGroup>
     <Compile Include="Application\ApplicationStart.cs" />
     <Compile Include="Application\IApplicationStart.cs" />
-    <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\IHomeController.cs" />
+    <Compile Include="DataService\IDataService.cs" />
+    <Compile Include="DataService\NormalDataService.cs" />
+    <Compile Include="DataService\PremiumDataService.cs" />
     <Compile Include="Container\Container.cs" />
+    <Compile Include="DataService\RoleName.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
