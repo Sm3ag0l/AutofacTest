@@ -28,7 +28,6 @@ namespace Test.Container
 
             container.RegisterType<Command>().As<ICommand>().WithParameter(new TypedParameter(typeof(Action), new Action(() => Console.WriteLine("ActionText"))));
 
-
             
             container.Register<Func<string, ICommand>>(delegate (IComponentContext context)
              {
