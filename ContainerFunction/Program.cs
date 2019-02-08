@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Test.Application;
-using Test.Interfaces;
+using ContainerFunction.Application;
+using ContainerFunction.Interfaces;
 
-namespace Test
+namespace ContainerFunction
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var container = Test.Container.Container.Config();
-            var test = container.Resolve<Func<Action, ICommand>>();
+            var container = Container.Container.Config();
+
             using (var scope = container.BeginLifetimeScope())
             {
                 var app = scope.Resolve<IApplicationStart>();

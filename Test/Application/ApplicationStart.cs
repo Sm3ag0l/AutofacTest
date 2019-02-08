@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,12 +14,16 @@ namespace Test.Application
     {
         private IMessager _messager;
         private ICommand _command;
+        private IContainer _container;
         private readonly Func<Action, ICommand> _func;
+        
 
         public ApplicationStart(IMessager messager, Func<Action,ICommand> func)
         {
             _messager = messager;
-            _func = func;
+            _container = Container.Container.Config();
+            _func = _container.Resolve<Func<Action, ICommand>>();    
+            
         }
 
         public void Run()

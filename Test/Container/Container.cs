@@ -37,20 +37,7 @@ namespace Test.Container
                  return cc.ResolveNamed<ICommand>;
              });
 
-
             container.RegisterType<Command>().As<ICommand>();
-
-            container.Register<Func<Action, ICommand >> (c =>
-            {
-                var componentContext = c.Resolve<IComponentContext>();
-                return (action) =>
-                {
-                    var dataService = componentContext.ResolveK<ICommand>(action);
-                    return dataService;
-                };
-            });
-
-
 
             return container.Build();
         }

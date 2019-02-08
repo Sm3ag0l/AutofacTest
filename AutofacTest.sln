@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyedFunction", "KeyedFunction\KeyedFunction.csproj", "{13D234D1-87D8-47B3-A418-777BA7D65E38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerFunction", "ContainerFunction\ContainerFunction.csproj", "{C23B7602-7179-4E2A-8F92-84D178922027}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{13D234D1-87D8-47B3-A418-777BA7D65E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13D234D1-87D8-47B3-A418-777BA7D65E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13D234D1-87D8-47B3-A418-777BA7D65E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23B7602-7179-4E2A-8F92-84D178922027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23B7602-7179-4E2A-8F92-84D178922027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23B7602-7179-4E2A-8F92-84D178922027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C23B7602-7179-4E2A-8F92-84D178922027}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
