@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ContainerFunction.Application;
 using ContainerFunction.Interfaces;
+using Test.Container;
 
 namespace ContainerFunction
 {
@@ -16,9 +17,11 @@ namespace ContainerFunction
         {
             var container = Container.Container.Config();
 
-            using (var scope = container.BeginLifetimeScope())
+            // scope is saved in a static class because in this programm we resolve directly from scope
+            // when we resolve from container we get probles with memory leaks
+            using (ContainerScope.Scope = container.BeginLifetimeScope())
             {
-                var app = scope.Resolve<IApplicationStart>();
+                var app = ContainerScope.Scope.Resolve<IApplicationStart>();
 
                 app.Run();
             }

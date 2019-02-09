@@ -7,24 +7,25 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ContainerFunction.Commands;
 using ContainerFunction.Interfaces;
+using ContainerFunction.Container;
 
 namespace ContainerFunction.Application
 {
     public class ApplicationStart : IApplicationStart
     {
         // the autofac container is built in a static class therefor there is no need to place it in the constructor of ApplicationStart class
-        private IContainer _container;
+        private ILifetimeScope _scope;
         private readonly Func<Action, ICommand> _funcWithOneParameter;
         private readonly Func<Action, bool, ICommand> _funcWithTwoParameters;
 
         public ApplicationStart()
         {
-            // the static autofac container 
-            _container = Container.Container.Config();
+            // the static autofac scope 
+            _scope = ContainerScope.Scope;
 
             // with the container we create a constructor for the Command class 
-            _funcWithOneParameter = _container.Resolve<Func<Action, ICommand>>();
-            _funcWithTwoParameters = _container.Resolve<Func<Action, bool, ICommand>>();
+            _funcWithOneParameter = _scope.Resolve<Func<Action, ICommand>>();
+            _funcWithTwoParameters = _scope.Resolve<Func<Action, bool, ICommand>>();
         }
 
         public void Run()
